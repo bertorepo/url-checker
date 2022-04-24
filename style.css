@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e4e3e3;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  align-items: center;
+}
+
+.container .checker {
+  width: 40rem;
+  background: #fff;
+  height: 100%;
+  padding: 3rem;
+  border-radius: 0.6rem;
+  box-shadow: 0rem 1rem 1rem #0000;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.container .checker .checker-header {
+  text-align: center;
+}
+
+.container .checker button {
+  background: rgb(16, 180, 221);
+  border: 0;
+  padding: 1rem;
+  width: 20rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 auto;
+  transition: 0.3s ease;
+}
+
+.container .checker button:hover {
+  background: rgb(20, 152, 185);
+}
+
+.container .checker textarea {
+  width: 100%;
+  height: 10rem;
+}
