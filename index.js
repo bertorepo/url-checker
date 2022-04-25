@@ -63,3 +63,4 @@ $(function () {
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#uploading_json_data
 // https://stackoverflow.com/questions/6467848/how-to-get-http-response-code-for-a-url-in-java
+// https://stackoverflow.com/questions/1020133/how-to-split-html-textarea-element-into-array-of-lines-in-java
