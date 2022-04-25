@@ -25,7 +25,6 @@ $(function () {
     //       "Access-Control-Allow-Origin": "*",
     //       "Content-Type": "application/json",
     //     },
-    //   }).then((response) => response.json());
     //   return response;
     // }
 
@@ -35,30 +34,32 @@ $(function () {
     //   });
     // });
 
-    async function makeRequest() {
-      try {
-        const response = await fetch("http://libopac.nodai.ac.jp/", {
-          method:"POST",
-          mode: "no-cors",
-          redirect: "follow",
-        });
-
-        console.log("status code: ", response.status); // 👉️ 200
-
-        if (!response.ok) {
-          console.log(response);
-          throw new Error(`Error! status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        return result;
-      } catch (err) {
-        console.log(err);
-      }
-    }
-
-    makeRequest();
+    lineArr.forEach((url) => {
+      makeRequest(url);
+    });
   });
+  async function makeRequest(url) {
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        mode: "no-cors",
+        redirect: "follow",
+      });
+
+      console.log("status code: ", response.status); // 👉️ 200
+
+      if (!response.ok) {
+        console.log(response);
+        throw new Error(`Error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      return result;
+    } catch (err) {
+      console.log(err);
+    }
+  }
 });
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#uploading_json_data
+// https://stackoverflow.com/questions/6467848/how-to-get-http-response-code-for-a-url-in-java
